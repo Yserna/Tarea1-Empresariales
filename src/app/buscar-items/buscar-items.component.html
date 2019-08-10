@@ -1,0 +1,39 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="container section">
+
+  <h4>Yennifer Serna Carvajal - Mercadolibre</h4>
+    
+    <div class="row">
+        <form #filtro="ngForm">
+        <div class="col s8">
+          <input type="text" name="filtro" placeholder="Buscar productos, marcas y más.." name="busqueda" [(ngModel)]="buscar">
+
+        </div>
+        <div class="col s3">
+                <a class="waves-effect waves-light green btn" (click)="mostrar()"><i class="material-icons">search</i></a>
+        </div>
+        </form>
+    </div>
+    <div>
+           <table>
+                    <thead>
+                      <tr>
+                          <th></th>
+                          <th>Producto</th>
+                          <th>Vendedor</th>
+                          <th>Precio</th>
+
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                      <tr *ngFor="let item of items">
+                        <td><img src="{{item.itemImg}}" alt=""></td>
+                        <td>{{item.itemName}}</td>
+                        <td>{{item.sellerName}}</td>
+                        <td>${{item.itemCost}}</td>
+                      </tr>
+                    </tbody>
+          </table>
+    </div>
+</div>
